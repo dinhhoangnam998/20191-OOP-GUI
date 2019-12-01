@@ -17,6 +17,8 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import java.awt.Dimension;
+import java.awt.Rectangle;
 
 public class Form extends JPanel {
 	private JTextField textField;
@@ -27,6 +29,7 @@ public class Form extends JPanel {
 	 * Create the panel.
 	 */
 	public Form() {
+		setPreferredSize(new Dimension(540, 585));
 		
 		JLabel lblHashtag = new JLabel("hashtag");
 		lblHashtag.setBounds(58, 42, 61, 19);

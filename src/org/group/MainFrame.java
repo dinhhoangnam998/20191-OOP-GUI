@@ -34,7 +34,7 @@ public class MainFrame {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1000, 701);
+		frame.setBounds(100, 100, 854, 701);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel main = new JPanel();
@@ -49,24 +49,33 @@ public class MainFrame {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(navbar, GroupLayout.PREFERRED_SIZE, 291, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
-					.addContainerGap())
+					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(main, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
-							.addContainerGap())
-						.addComponent(navbar, GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)))
+						.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+						.addComponent(navbar, GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)))
 		);
 		layeredPane.setLayout(new CardLayout(0, 0));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		layeredPane.add(tabbedPane, "name_44069459764000");
+		
+		Form addVocab = new Form();
+		tabbedPane.addTab("Add Vocab", null, addVocab, null);
+		
+		Form editVocab = new Form();
+		tabbedPane.addTab("Edit Vocab", null, editVocab, null);
+		
+		Form deleteVocab = new Form();
+		tabbedPane.addTab("Delete Vocab", null, deleteVocab, null);
+		
+		FindVocab findVocab = new FindVocab();
+		tabbedPane.addTab("New tab", null, findVocab, null);
 		
 		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
 		layeredPane.add(tabbedPane_1, "name_44073610947800");
